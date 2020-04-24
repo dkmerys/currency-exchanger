@@ -3,18 +3,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from "jquery";
 
-import { ExchangeRate } from './../src/currency-exchanger.js';
+import { Converter } from './../src/currency-exchanger.js';
 
 $(document).ready(function () {
   $('#exchanger').click(function () {
+    event.preventDefault();
     let dollars = parseInt($("#dollars").val());
     let newCurrency = $('#newCurrency').val();
-    $('#dollars').val("");
-
     (async () => {
-      let exchangeRate = new ExchangeRate();
-      const response = await exchangeRate.getConvertedAmount(newCurrency, dollars);
+      let converter = new Converter();
+      const response = await converter.getConversionRates(newCurrency, dollars);
       console.log('response: ', response.conversion_rates);
+      console.log(converter.conversion_rates[newCurrency]);
       getElements(response);
     })();
 
