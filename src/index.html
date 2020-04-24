@@ -1,16 +1,32 @@
 <html>
-  <head>
-    <title>Currency Exchanger</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Convert your US Dollars to another currency using this tool</h1>
-      <label for="dollars">Enter an amount in US Dollars: $</label>
-      <input id="dollars" type="text">
-      <button class="btn-success" id="exchanger">Get Current Temperature and Humidity</button>
-      <div class="errors"></div>
-      <div class="showRate"></div>
-      <div class="showNewAmount"></div>
+
+<head>
+  <title>Currency Exchanger</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Convert your US Dollars to another currency using this tool</h1>
+    <div>
+      <form>
+        <label for="dollars">Enter an amount in US Dollars: $</label>
+        <input id="dollars" type="text">
+        <div class="dropdown">
+          <select class="form-control" id="newCurrency">
+            <option value="EUR">Euro</option>
+            <option value="JPY">Yen</option>
+            <option value="GBP">Pound</option>
+            <option value="MXN">Peso</option>
+            <option value="CAD">Canadian Dollar</option>
+          </select>
+        </div>
+      </form>
     </div>
-  </body>
+    <button class="btn-success" id="exchanger">Get current exchange rate and new currency amount</button>
+    <div class="errors"></div>
+    <div class="showRate"></div>
+    <div class="showNewAmount"></div>
+  </div>
+</body>
+
 </html>

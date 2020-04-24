@@ -8,19 +8,20 @@ import { ExchangeRate } from './../src/currency-exchanger.js';
 $(document).ready(function () {
   $('#exchanger').click(function () {
     const dollars = $('#dollars').val();
+    let newCurrency = $('#newCurrency').val();
     $('#dollars').val("");
 
     (async () => {
       let exchangeRate = new ExchangeRate();
-      const response = await exchangeRate.getConvertedAmount(currency);
-      console.log('response: ', response)
+      const response = await exchangeRate.getConvertedAmount(newCurrency);
+      console.log('response: ', response);
       getElements(response);
     })();
 
 
     function getElements(response) {
       if (response) {
-        $('.showRate').text(`The current exchange rate for ${currency} to US Dollars is ${response.main.humidity}%`);
+        $('.showRate').text(`The current exchange rate for ${newCurrency} to US Dollars is ${response.conversion_rates.humidity}%`);
         $('.showNewAmount').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
       } else {
         $('.showRate').text(`There was an error handling your request. Are you sure you picked a real currency?`);
