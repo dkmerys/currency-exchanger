@@ -8,9 +8,9 @@
   <div class="container">
     <h1>Currency Converter</h1>
     <h4>Convert your US Dollars to another currency using this tool</h4>
-    <div>
+    <div class="jumbotron">
       <form>
-        <label for="dollars">Enter an amount in US Dollars: $</label>
+        <label id="entry" for="dollars">Enter an amount in US Dollars: $</label>
         <input id="dollars" type="text">
         <div class="dropdown">
           <select class="form-control" id="newCurrency">
@@ -19,19 +19,20 @@
             <option value="GBP">British Pound</option>
             <option value="MXN">Mexican Peso</option>
             <option value="CAD">Canadian Dollar</option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
+            <option value="NZD">New Zealand Dollar</option>
+            <option value="SEK">Swedish Krona</option>
+            <option value="CNY">Chinese Renmibi</option>
+            <option value="CHF">Swiss Franc</option>
+            <option value="AUD">Australian Dollar</option>
           </select>
         </div>
       </form>
     </div>
-    <button class="btn-success" id="exchanger">Get new currency amount</button>
-    <div class="errors"></div>
-    <div class="showRate"></div>
-    <div class="showNewAmount"></div>
+    <div>
+      <button class="btn-success" id="exchanger">Get new currency amount</button>
+    </div>
+    <div><p id="errors"></p></div>
+    <div><p id="showNewAmount"></p></div>
   </div>
 </body>
 

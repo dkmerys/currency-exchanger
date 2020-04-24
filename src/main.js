@@ -23,9 +23,9 @@ $(document).ready(function () {
     function getElements(response) {
       if (response) {
         // $('.showRate').text(`The current exchange rate for 1 USD to 1 ${newCurrency} is: ${response.conversion_rates.USD}.`);
-        $('.showNewAmount').text(`${dollars} USD is ${(response.conversion_rates[newCurrency] * dollars)} ${newCurrency}.`);
+        $('#showNewAmount').text(`${dollars} USD is ${(response.conversion_rates[newCurrency] * dollars)} ${newCurrency}.`);
       } else {
-        $('.showNewAmount').text(`There was an error handling your request. Please double-check your API key and try again.`);
+        $('#errors').text(`There was an error handling your request. Please double-check your API key and try again.`);
       }
     }  
   });
