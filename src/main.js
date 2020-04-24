@@ -14,7 +14,8 @@ $(document).ready(function () {
       let converter = new Converter();
       const response = await converter.getConversionRates(newCurrency, dollars);
       console.log('response: ', response.conversion_rates);
-      console.log(converter.conversion_rates[newCurrency]);
+      console.log(response.conversion_rates[newCurrency]);
+      console.log((response.conversion_rates[newCurrency] * dollars));
       getElements(response);
     })();
 

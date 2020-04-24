@@ -11,11 +11,12 @@ export class Converter {
       let jsonifiedResponse;
       if (response.ok && response.status == 200) {
         jsonifiedResponse = await response.json();
-        let conversionRate = jsonifiedResponse.conversion_rates[newCurrency];
-        console.log(conversionRate);
       } else {
         jsonifiedResponse = false;
       }
+      let conversionRate = jsonifiedResponse.conversion_rates[newCurrency];
+      let convertedAmount = (conversionRate * dollars);
+      console.log(convertedAmount)
       return jsonifiedResponse;
     } catch (error) {
       console.log('in the catch');
