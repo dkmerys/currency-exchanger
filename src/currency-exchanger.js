@@ -1,7 +1,8 @@
 export class ExchangeRate {
-  async getConvertedAmount(currency, dollars) {
+
+  async getConvertedAmount(newCurrency, dollars) {
     console.log('i am in the method');
-    console.log(currency);
+    console.log(newCurrency);
     console.log(dollars)
     try {
       let response = await fetch(`https://prime.exchangerate-api.com/v5/${process.env.API_KEY}/latest/USD`);

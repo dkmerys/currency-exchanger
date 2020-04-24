@@ -7,17 +7,16 @@ import { ExchangeRate } from './../src/currency-exchanger.js';
 
 $(document).ready(function () {
   $('#exchanger').click(function () {
-    let dollars = $('#dollars').val();
+    let dollars = parseInt($("#dollars").val());
     let newCurrency = $('#newCurrency').val();
     $('#dollars').val("");
 
     (async () => {
       let exchangeRate = new ExchangeRate();
       const response = await exchangeRate.getConvertedAmount(newCurrency, dollars);
-      console.log('response: ', response);
+      console.log('response: ', response.conversion_rates);
       getElements(response);
     })();
-
 
     function getElements(response) {
       if (response) {
