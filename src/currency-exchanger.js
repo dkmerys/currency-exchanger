@@ -4,7 +4,7 @@ export class ExchangeRate {
     console.log(currency);
     console.log(dollars)
     try {
-      let response = await fetch(`https://prime.exchangerate-api.com/v5/${process.env.API_KEY}/latest/${currency}`);
+      let response = await fetch(`https://prime.exchangerate-api.com/v5/${process.env.API_KEY}/latest/USD`);
       console.log('i got past the await');
 
       let jsonifiedResponse;
