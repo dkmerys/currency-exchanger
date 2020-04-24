@@ -21,8 +21,8 @@ $(document).ready(function () {
 
     function getElements(response) {
       if (response) {
-        $('.showRate').text(`The current exchange rate for ${newCurrency} to US Dollars is ${response.conversion_rates.humidity}%`);
-        $('.showNewAmount').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
+        $('.showRate').text(`The current exchange rate for US Dollars to ${newCurrency} is ${response.conversion_rates.EUR}.`);
+        // $('.showNewAmount').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
       } else {
         $('.showRate').text(`There was an error handling your request. Are you sure you picked a real currency?`);
         $('.showNewAmount').text(`Please check your inputs and try again. Make sure it's a number.`);
